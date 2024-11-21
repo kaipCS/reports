@@ -15,4 +15,24 @@ $statement->execute ();
 $statement ->closeCursor();
 
 
+$statement = $conn->prepare("DROP TABLE IF EXISTS tblsubjects;
+CREATE TABLE tblsubjects
+CREATE TABLE TblSubjects(SubjectID INT(4) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+Subjectname VARCHAR(20) NOT NULL,
+Teacher VARCHAR(20) NOT NULL");
+$statement->execute ();
+$statement ->closeCursor();
+
+
+$statement = $conn->prepare("DROP TABLE IF EXISTS tblpupilstudies;
+CREATE TABLE TblPupilStudies(Subjectid INT(4),
+Userid INT(4),
+Classposition INT(2),
+Classgrade  CHAR(1),
+Exammark INT(2),
+Comment TEXT,
+PRIMARY KEY(Subjectid,Userid))");
+$statement->execute ();
+$statement ->closeCursor();
+
 ?>
