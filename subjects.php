@@ -12,6 +12,19 @@
   <input type="submit" value="subject">
 </form>
 
-       
+
+
+<?php
+include_once ("connection.php");
+$stmt = $conn -> prepare("SELECT * FROM tblsubjects");
+$stmt -> execute();
+while ($row = $stmt -> fetch(PDO::FETCH_ASSOC))
+{                                                     
+#print_r($row);                                                       
+echo($row["subjectname"]. " ". $row["teacher"]);                                                                                                              
+}                           
+?>   
+
+  
 </body>
 </html>
