@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
+<head>
 <title>Comments </title>
     
 </head>
 <body>
-    <form action="addcomments.php" method="post">
-    <select name ="student">
+    <form action="addcomments.php" method="POST">
+    <select name ="userid">
     <?php
         include_once("connection.php");
         $stmt = $conn->prepare("SELECT * FROM tblusers WHERE role=0 ORDER BY surname ASC");
@@ -17,7 +18,7 @@
             }
     ?>
     </select>
-    <select name ="subject">
+    <select name ="subjectid">
     <?php
         $stmt = $conn->prepare("SELECT * FROM tblsubjects ORDER BY subjectname ASC");
         $stmt->execute();
@@ -33,7 +34,6 @@
     Class position:<input type="number" name="classposition"><br>
     Exam mark:<input type="number" name="exammark"><br>
     Comment: <input type= "text" name= "comment">
-
     <input type="submit" value="Add comment">
 </form>
 
