@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<title>Add pupil to class</title>
+<title>Comments </title>
     
 </head>
 <body>
-    <form action="addpupiltosubejct.php" method="post">
+    <form action="addcomments.php" method="post">
     <select name ="student">
     <?php
         include_once("connection.php");
@@ -28,7 +28,13 @@
             }
     ?>
     </select>
-    <input type="submit" value="Add pupil to subject">
+    <br>
+    Grade:<input type="number" name="classgrade"><br>
+    Class position:<input type="number" name="classposition"><br>
+    Exam mark:<input type="number" name="exammark"><br>
+    Comment: <input type= "text" name= "comment">
+
+    <input type="submit" value="Add comment">
 </form>
 
 </body>
