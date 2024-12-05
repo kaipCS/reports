@@ -24,6 +24,5 @@ echo($row["subjectname"]. " ". $row["teacher"]. "<br>");
 }                           
 ?>   
 
-  
 </body>
 </html>

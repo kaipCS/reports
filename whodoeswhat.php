@@ -7,7 +7,9 @@
 </head>
 <body>
 
-<h2> who does what </h2>
+<h2> Who does what? </h2>
+<ul>
+
 <?php
 include_once ("connection.php");
 $stmt = $conn -> prepare("SELECT tblsubjects.subjectname as sn, 
@@ -20,9 +22,10 @@ $stmt -> execute();
 while ($row = $stmt -> fetch(PDO::FETCH_ASSOC))
 {                                                     
 #print_r($row);                                                       
-echo($row["sn"]. " ". $row["ln"]. "<br>");                                                                                                              
+echo("<li>". $row["sn"]. ": ". $row["ln"]. "</li>");                                                                                                              
 }                           
-?>                                                                                                                                                                                              
+?>     
+</ul>                                                                                                                                                                                         
 </body>
 </html>
 
